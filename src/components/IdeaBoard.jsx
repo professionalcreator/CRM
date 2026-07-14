@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Plus, Flame, ThumbsUp, MessageSquare, Tag, User, Info, ArrowUpRight, HelpCircle } from "lucide-react";
+import { Plus, Flame, ThumbsUp, MessageSquare, Tag, User, Info, ArrowUpRight, HelpCircle, Search } from "lucide-react";
 
 export default function IdeaBoard({
   ideas = [],
