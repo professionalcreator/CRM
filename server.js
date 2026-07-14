@@ -1096,6 +1096,23 @@ app.post("/api/insights/chat", (req, res) => {
   res.json({ response: aiText });
 });
 
+// Serve static files from React production build in same-port setups
+const distPath = path.join(__dirname, "dist");
+app.use(express.static(distPath));
+
+// Fallback for SPA routing (must be defined AFTER API routes)
+app.get("*", (req, res, next) => {
+  if (req.path.startsWith("/api")) {
+    return next();
+  }
+  const indexHtml = path.join(distPath, "index.html");
+  if (fs.existsSync(indexHtml)) {
+    res.sendFile(indexHtml);
+  } else {
+    res.send("ClientFlow CRM API Service Online. Please build frontend assets.");
+  }
+});
+
 // START SERVER
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
