@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search, Plus, Edit, Trash2, Mail, Phone, UserPlus, Info, Sparkles, Building, RefreshCcw } from "lucide-react";
+import { Search, Plus, Edit, Trash2, Mail, Phone, UserPlus, Info, Sparkles, Building, RefreshCcw, Target } from "lucide-react";
 
 export default function Leads({
   leads = [],
@@ -109,6 +109,18 @@ export default function Leads({
 
   return (
     <div className="leads-view">
+      <div className="section-illustration-banner banner-leads">
+        <img src={`${import.meta.env.BASE_URL}leads_funnel.png`} alt="" />
+        <div className="banner-content">
+          <div className="banner-icon">
+            <Target size={28} />
+          </div>
+          <div className="banner-text">
+            <h3>Lead Pipeline Management</h3>
+            <p>Capture, qualify, and convert prospects into loyal customers with intelligent lead tracking.</p>
+          </div>
+        </div>
+      </div>
       {isViewer && (
         <div className="role-banner read-only">
           <Info size={16} />

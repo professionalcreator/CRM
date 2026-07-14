@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Plus, Flame, ThumbsUp, MessageSquare, Tag, User, Info, ArrowUpRight, HelpCircle, Search } from "lucide-react";
+import { Plus, Flame, ThumbsUp, MessageSquare, Tag, User, Info, ArrowUpRight, HelpCircle, Search, Lightbulb } from "lucide-react";
 
 export default function IdeaBoard({
   ideas = [],
@@ -75,7 +75,19 @@ export default function IdeaBoard({
 
   return (
     <div className="idea-board-view" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-      
+      <div className="section-illustration-banner banner-ideas">
+        <img src={`${import.meta.env.BASE_URL}ideas_innovation.png`} alt="" />
+        <div className="banner-content">
+          <div className="banner-icon">
+            <Lightbulb size={28} />
+          </div>
+          <div className="banner-text">
+            <h3>Innovation & Product Ideas</h3>
+            <p>Transform customer feedback into actionable product roadmap items. Upvote, prioritize, and ship.</p>
+          </div>
+        </div>
+      </div>
+
       {isViewer && (
         <div className="role-banner read-only" style={{ marginBottom: 0 }}>
           <Info size={16} />

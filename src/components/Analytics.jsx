@@ -45,7 +45,19 @@ export default function Analytics({
 
   return (
     <div className="analytics-view" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-      
+      <div className="section-illustration-banner banner-analytics">
+        <img src={`${import.meta.env.BASE_URL}analytics_performance.png`} alt="" />
+        <div className="banner-content">
+          <div className="banner-icon">
+            <TrendingUp size={28} />
+          </div>
+          <div className="banner-text">
+            <h3>Performance Analytics</h3>
+            <p>Data-driven insights to optimize your sales pipeline, revenue forecasting, and team performance metrics.</p>
+          </div>
+        </div>
+      </div>
+
       {/* Top Total Statistics Cards */}
       <div className="metrics-grid">
         <div className="metric-card">

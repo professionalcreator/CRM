@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search, Plus, Mail, Phone, Calendar, MessageSquare, Tag, PlusCircle, Trash2, X, Info, Lightbulb, User, ShieldAlert, Award, FileText, CheckCircle } from "lucide-react";
+import { Search, Plus, Mail, Phone, Calendar, MessageSquare, Tag, PlusCircle, Trash2, X, Info, Lightbulb, User, Users, ShieldAlert, Award, FileText, CheckCircle } from "lucide-react";
 
 export default function Customers({
   customers = [],
@@ -146,7 +146,19 @@ export default function Customers({
 
   return (
     <div className="customers-view" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-      
+      <div className="section-illustration-banner banner-customers">
+        <img src={`${import.meta.env.BASE_URL}customer_relations.png`} alt="" />
+        <div className="banner-content">
+          <div className="banner-icon">
+            <Users size={28} />
+          </div>
+          <div className="banner-text">
+            <h3>Customer Relationship Hub</h3>
+            <p>Build stronger relationships with full communication history, support tracking, and customer insights.</p>
+          </div>
+        </div>
+      </div>
+
       {/* UI/UX Reference Mockups Panel */}
       <div className="dashboard-card">
         <div className="card-header-flex" style={{ borderBottom: "1px solid var(--border-color)", paddingBottom: "12px", marginBottom: "16px" }}>

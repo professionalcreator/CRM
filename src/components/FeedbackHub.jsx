@@ -124,7 +124,19 @@ export default function FeedbackHub({
 
   return (
     <div className="feedback-hub-view">
-      
+      <div className="section-illustration-banner banner-feedback">
+        <img src={`${import.meta.env.BASE_URL}feedback_satisfaction.png`} alt="" />
+        <div className="banner-content">
+          <div className="banner-icon">
+            <MessageSquare size={28} />
+          </div>
+          <div className="banner-text">
+            <h3>Customer Feedback Center</h3>
+            <p>Collect, analyze, and act on customer feedback. Convert insights into ideas and follow-up tasks.</p>
+          </div>
+        </div>
+      </div>
+
       {isViewer && (
         <div className="role-banner read-only">
           <Info size={16} />

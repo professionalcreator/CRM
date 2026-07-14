@@ -22,7 +22,6 @@ export default function Dashboard({
   onToggleTask,
   onNavigate
 }) {
-  const [isRefExpanded, setIsRefExpanded] = useState(true); // Open by default for visual mockup reference
 
   // Counts
   const newLeadsCount = leads.filter(l => l.status === "Lead").length;
@@ -47,42 +46,27 @@ export default function Dashboard({
   return (
     <div className="dashboard-view" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
       
-      {/* UI/UX Reference Mockups Panel */}
-      <div className="dashboard-card">
-        <div className="card-header-flex" style={{ borderBottom: "1px solid var(--border-color)", paddingBottom: "12px", marginBottom: "16px" }}>
-          <h2 style={{ fontSize: "1.15rem", fontWeight: 700, display: "flex", alignItems: "center", gap: 8 }}>
-            <Lightbulb size={18} style={{ color: "var(--primary-color)" }} />
-            Dashboard UI/UX Reference Guide
-          </h2>
-          <button 
-            type="button"
-            className="btn btn-secondary btn-sm"
-            onClick={() => setIsRefExpanded(!isRefExpanded)}
-          >
-            {isRefExpanded ? "Hide Reference" : "Show Reference"}
-          </button>
-        </div>
-
-        {isRefExpanded && (
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "24px", alignItems: "start" }}>
-            {/* Left Side: Mockup Image */}
-            <div style={{ border: "1px solid var(--border-color)", borderRadius: "var(--radius-sm)", overflow: "hidden", backgroundColor: "#f8fafc", display: "flex", justifyContent: "center" }}>
-              <img src="/dashboard_mockup.png" alt="Dashboard Design Mockup" style={{ width: "100%", height: "auto", display: "block" }} />
-            </div>
-
-            {/* Right Side: Key points */}
-            <div style={{ fontSize: "0.85rem", display: "flex", flexDirection: "column", gap: "12px" }}>
-              <h4 style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--text-main)" }}>
-                Dashboard Design Specifications
-              </h4>
-              <ul style={{ paddingLeft: "16px", display: "flex", flexDirection: "column", gap: "8px", lineHeight: "1.4", color: "var(--text-muted)" }}>
-                <li><strong>Slate Sidebar Navigation</strong>: Includes compact collapsible triggers and quick switches for roles.</li>
-                <li><strong>Gradient Stat Cards</strong>: Includes hover scaling transform triggers for click reactions.</li>
-                <li><strong>Dual Data Analytics</strong>: Interactive SVG bar scales showing contract values and funnel ratios.</li>
-              </ul>
+      {/* Hero Welcome Banner */}
+      <div className="dashboard-hero-banner">
+        <div className="hero-overlay">
+          <div className="hero-text">
+            <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#fff', marginBottom: '8px', lineHeight: 1.2 }}>
+              Welcome to ClientFlow CRM
+            </h2>
+            <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, maxWidth: '500px' }}>
+              Transform customer relationships into revenue. Track leads, manage deals, and turn feedback into your next big product idea.
+            </p>
+            <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
+              <button className="btn btn-primary" onClick={() => onNavigate('leads')} style={{ backgroundColor: '#8b5cf6', borderColor: '#8b5cf6' }}>
+                <Target size={14} /> Capture Leads
+              </button>
+              <button className="btn btn-secondary" onClick={() => onNavigate('analytics')} style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                <TrendingUp size={14} /> View Analytics
+              </button>
             </div>
           </div>
-        )}
+        </div>
+        <img src={`${import.meta.env.BASE_URL}crm_hero_banner.png`} alt="CRM Dashboard Overview" className="hero-bg-image" />
       </div>
 
       {/* KPI Cards Grid */}
