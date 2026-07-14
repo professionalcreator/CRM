@@ -179,7 +179,7 @@ export default function Customers({
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "24px", alignItems: "start" }}>
             {/* Left Side: Mockup Image */}
             <div style={{ border: "1px solid var(--border-color)", borderRadius: "var(--radius-sm)", overflow: "hidden", backgroundColor: "#f8fafc", display: "flex", justifyContent: "center" }}>
-              <img src="/customer_drawer_mockup.png" alt="Customer Profile Design Mockup" style={{ width: "100%", height: "auto", display: "block" }} />
+              <img src={`${import.meta.env.BASE_URL}customer_drawer_mockup.png`} alt="Customer Profile Design Mockup" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
 
             {/* Right Side: Key points */}

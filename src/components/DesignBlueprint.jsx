@@ -19,7 +19,7 @@ export default function DesignBlueprint() {
           </div>
           <div style={{ display: "flex", gap: "10px" }}>
             <a 
-              href="/clientflow_crm_reference.png" 
+              href={`${import.meta.env.BASE_URL}clientflow_crm_reference.png`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn btn-secondary btn-sm"
@@ -29,7 +29,7 @@ export default function DesignBlueprint() {
               Open Original
             </a>
             <a 
-              href="/clientflow_crm_reference.png" 
+              href={`${import.meta.env.BASE_URL}clientflow_crm_reference.png`} 
               download="clientflow_crm_reference.png" 
               className="btn btn-primary btn-sm"
               style={{ display: "flex", alignItems: "center", gap: "6px" }}
@@ -79,7 +79,7 @@ export default function DesignBlueprint() {
           }}
         >
           <img 
-            src="/clientflow_crm_reference.png" 
+            src={`${import.meta.env.BASE_URL}clientflow_crm_reference.png`} 
             alt="ClientFlow CRM AI Dashboard Mockup" 
             style={{ 
               maxWidth: "100%", 
